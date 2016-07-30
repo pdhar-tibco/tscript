@@ -1,0 +1,21 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        "node_modules",
+        ".vscode"
+    ],
+    "files": [
+        "typings/index.d.ts",
+        "src/point/point.ts",
+        "src/iterator/iterator.ts",
+        "src/main.ts"
+    ]
+
+}
