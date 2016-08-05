@@ -1,5 +1,6 @@
 'use strict';
-import fs = require("fs");
+//import fs = require("fs");
+import {readFile} from "fs";
 
 class Point {
     constructor(public x: number, public y: number) {
@@ -186,7 +187,7 @@ for (var j = 0; j < 3; j++) {
 
 
     function loadJSON(filename: string, cb: (error: Error, param?: string) => void) {
-        fs.readFile(filename, function (err: Error, data: any) {
+        readFile(filename, function (err: Error, data: any) {
             if (err) {
                 cb(err);
             } else {
@@ -207,12 +208,8 @@ for (var j = 0; j < 3; j++) {
     })
 }
 
-/// <reference path="es6-promise.d.ts" />
 
-// import rsvp = require('es6-promise');
-// rsvp.polyfill(); // Test for polyfill method existence
-// var Promise = rsvp.Promise;
-import { Promise } from 'es6-promise';
+import { Promise } from 'core-js';
 
 const promise = new Promise<number>((resolve, reject) => {
     resolve(123);
@@ -259,7 +256,7 @@ Promise.resolve(1234567).then((res: number) => {
 
 function readFileAsync(filename: string): Promise<any> {
     return new Promise((resolve, reject) => {
-        fs.readFile(filename, (err: Error, result: Buffer) => {
+        readFile(filename, (err: Error, result: Buffer) => {
             if (err) {
                 reject(err);
             } else {
@@ -308,41 +305,44 @@ loadItem('1').then((res) => {
 })
 
 Promise.all([loadItem('1'), loadItem('2'), loadItem('3')]).then((res) => {
-    [item1, item2, item3] = res;
+    //[item1, item2, item3] = res;
     console.log('done', res);
 })
 
 {
-    var [x, y, ...remaining] = [1, 2, 3, 4];
+    //let x:number,y:number,remaining:any;
+
+    let [x, y, ...remaining] = [1, 2, 3, 4] as number[];
     console.log(x, y, remaining); // 1, 2, [3,4]    
 }
 {
-    var x = 1, y = 2;
-    [x, y] = [y, x];
+    var x:number = 1, y:number = 2;
+    [x, y] = [y, x] as Array<number>;
     console.log(x, y); // 2,1
 }
 
 
 {
-    var someArray: number[] = [9, 2, 5];
+    var someArray: Array<number> = [9, 2, 5];
     for (let item in someArray) {
         console.log(item);
     }
-    for (let item of someArray) {
+    for (let item in someArray.values ) {
         console.log(item);
     }
 }
 
-// function* infiniteSequence() {
-//     var i = 0;
-//     while (true) {
-//         if (i > 20) {
-//             break;
-//         }
-//         yield i++;
-//     }
-// }
-// var iterator = infiniteSequence();
-// while (true) {
-//     console.log(iterator.next());
-// }
+function* infiniteSequence() {
+    var i = 0;
+    while (true) {
+        if (i > 20) {
+            break;
+        }
+        yield i++;
+    }
+}
+
+var iterator = infiniteSequence();
+while (true) {
+    console.log(iterator.next());
+}
