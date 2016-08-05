@@ -1,6 +1,6 @@
 'use strict';
 //import fs = require("fs");
-import {readFile} from "fs";
+import * as fs from "fs";
 
 class Point {
     constructor(public x: number, public y: number) {
@@ -187,7 +187,7 @@ for (var j = 0; j < 3; j++) {
 
 
     function loadJSON(filename: string, cb: (error: Error, param?: string) => void) {
-        readFile(filename, function (err: Error, data: any) {
+        fs.readFile(filename, function (err: Error, data: any) {
             if (err) {
                 cb(err);
             } else {
@@ -256,7 +256,7 @@ Promise.resolve(1234567).then((res: number) => {
 
 function readFileAsync(filename: string): Promise<any> {
     return new Promise((resolve, reject) => {
-        readFile(filename, (err: Error, result: Buffer) => {
+        fs.readFile(filename, (err: Error, result: Buffer) => {
             if (err) {
                 reject(err);
             } else {
@@ -332,17 +332,17 @@ Promise.all([loadItem('1'), loadItem('2'), loadItem('3')]).then((res) => {
     }
 }
 
-function* infiniteSequence() {
-    var i = 0;
-    while (true) {
-        if (i > 20) {
-            break;
-        }
-        yield i++;
-    }
-}
+// function* infiniteSequence() {
+//     var i = 0;
+//     while (true) {
+//         if (i > 20) {
+//             break;
+//         }
+//         yield i++;
+//     }
+// }
 
-var iterator = infiniteSequence();
-while (true) {
-    console.log(iterator.next());
-}
+// var iterator = infiniteSequence();
+// while (true) {
+//     console.log(iterator.next());
+// }
