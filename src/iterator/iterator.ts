@@ -1,26 +1,15 @@
 'use strict';
 
-
-interface IteratorResult<T> {
-    done: boolean;
-    value?: T
-}
-
-interface Iterable<T> {
-    next(value?:any): IteratorResult<T>;
-    return?(value?:any): IteratorResult<T>;
-    throw?(e?:any):IteratorResult<T>;
-}
-
 class Component  {
     constructor(public name: string) { }
 }
 
-class Frame implements Iterable<Component> {
+class Frame implements Iterator<Component> {
 
     private pointer = 0;
     
     constructor(public name: string, public component: Component[]) {}
+
     public next(): IteratorResult<Component> {
         if(this.pointer < this.component.length) {
             return {
@@ -54,7 +43,7 @@ console.log(html);
 
 var say="a bird in hand > two in the bush";
 var html2 = htmlEscape `<div>I would just like to say:${say}</div>`
-function htmlEscape(literals:string,...placeholders:string[]):any {
+function htmlEscape(literals,...placeholders:string[]):any {
     console.log("lit:",literals,"ph:",placeholders);
     let result = "";
     for(let i=0; i<placeholders.length;i++){

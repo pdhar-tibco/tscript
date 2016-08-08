@@ -1,13 +1,8 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "target": "es6",
-        "lib": [
-            "es5",
-            "es6",
-            "es2016"
-        ],
         "noImplicitAny": false,
         "sourceMap": true,
         "moduleResolution": "node"
@@ -15,12 +10,6 @@
     "exclude": [
         "node_modules",
         ".vscode"
-    ],
-    "files": [
-        "typings/index.d.ts",
-        "src/point/point.ts",
-        "src/iterator/iterator.ts",
-        "src/main.ts"
     ]
 
 }

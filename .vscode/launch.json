@@ -95,5 +95,20 @@
         "port": 5858,
         "sourceMaps": false,
         "outDir": null
+    }, {
+        "name": "Launch Chrome against localhost, with sourcemaps",
+        "type": "chrome",
+        "request": "launch",
+        "url": "file://${workspaceRoot}/src/chap4-1.html",
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
+    }, {
+        "name": "Attach to Chrome, with sourcemaps",
+        "type": "chrome",
+        "request": "attach",
+        "url": "file://${workspaceRoot}/src/chap4-1.html",
+        "port": 9222,
+        "sourceMaps": true,
+        "webRoot": "${workspaceRoot}"
     }]
 }

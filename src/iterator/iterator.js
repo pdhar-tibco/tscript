@@ -134,3 +134,4 @@ var Weekday;
 const mon = Weekday.Monday;
 const sun = Weekday.Sunday;
 console.log(Weekday.isBusinessDay(mon)); // true
+//# sourceMappingURL=iterator.js.map

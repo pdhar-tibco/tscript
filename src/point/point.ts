@@ -1,5 +1,4 @@
 'use strict';
-//import fs = require("fs");
 import * as fs from "fs";
 
 class Point {
@@ -10,12 +9,14 @@ class Point {
         return new Point(this.x + point.x, this.y + point.y);
     }
 }
+{
+    let p1 = new Point(0, 10);
+    let p2 = new Point(10, 20);
+    p2 = p1.add(p2);
 
-var p1 = new Point(0, 10);
-var p2 = new Point(10, 20);
-var p2 = p1.add(p2);
+    console.log(JSON.stringify(p2));
+}
 
-console.log(JSON.stringify(p2));
 
 // function foo() {
 //     console.log(this);
@@ -209,7 +210,7 @@ for (var j = 0; j < 3; j++) {
 }
 
 
-import { Promise } from 'core-js';
+//import { Promise } from 'core-js';
 
 const promise = new Promise<number>((resolve, reject) => {
     resolve(123);
@@ -310,39 +311,37 @@ Promise.all([loadItem('1'), loadItem('2'), loadItem('3')]).then((res) => {
 })
 
 {
-    //let x:number,y:number,remaining:any;
-
-    let [x, y, ...remaining] = [1, 2, 3, 4] as number[];
-    console.log(x, y, remaining); // 1, 2, [3,4]    
+    let [x1, y1, ...remaining] = [1, 2, 3, 4];
+    console.log(x1, y1, remaining); // 1, 2, [3,4]    
 }
 {
-    var x:number = 1, y:number = 2;
-    [x, y] = [y, x] as Array<number>;
+    let x: number = 1, y: number = 2;
+    [x, y] = [y, x];
     console.log(x, y); // 2,1
 }
 
 
 {
-    var someArray: Array<number> = [9, 2, 5];
+    let someArray: number[] = [9, 2, 5];
     for (let item in someArray) {
         console.log(item);
     }
-    for (let item in someArray.values ) {
+    for (let item of someArray) {
         console.log(item);
     }
 }
 
-// function* infiniteSequence() {
-//     var i = 0;
-//     while (true) {
-//         if (i > 20) {
-//             break;
-//         }
-//         yield i++;
-//     }
-// }
+function* infiniteSequence() {
+    let i = 0;
+    while (true) {
+        if (i > 20) {
+            break;
+        }
+        yield i++;
+    }
+}
 
-// var iterator = infiniteSequence();
-// while (true) {
-//     console.log(iterator.next());
-// }
+var iterator = infiniteSequence();
+while (true) {
+    console.log(iterator.next());
+}
