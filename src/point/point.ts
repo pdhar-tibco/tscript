@@ -341,7 +341,11 @@ function* infiniteSequence() {
     }
 }
 
-var iterator = infiniteSequence();
-while (true) {
-    console.log(iterator.next());
+let iterator = infiniteSequence();
+let n:IteratorResult<number>;
+while (true) {  
+    n = iterator.next();
+    console.log(n);
 }
+
+

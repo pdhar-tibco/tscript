@@ -299,8 +299,10 @@ function* infiniteSequence() {
         yield i++;
     }
 }
-var iterator = infiniteSequence();
+let iterator = infiniteSequence();
+let n;
 while (true) {
-    console.log(iterator.next());
+    n = iterator.next();
+    console.log(n);
 }
 //# sourceMappingURL=point.js.map
