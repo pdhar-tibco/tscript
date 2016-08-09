@@ -1,5 +1,6 @@
 'use strict';
 
+
 class Component  {
     constructor(public name: string) { }
 }

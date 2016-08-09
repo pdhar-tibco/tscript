@@ -3,6 +3,9 @@ class NumberHelper {
     static sumParams(...numbers) {
         return numbers.reduce((a, b) => { return a + b; });
     }
+    static formatAsCurrency(val) {
+        return val == null ? "" : "$" + val.toFixed(2);
+    }
 }
 exports.NumberHelper = NumberHelper;
 NumberHelper.sumParams(1, 2, 4, 5, 6);

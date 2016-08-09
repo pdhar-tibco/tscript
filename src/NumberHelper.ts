@@ -2,6 +2,9 @@ export class NumberHelper {
     static sumParams(...numbers:number[]){
         return numbers.reduce((a,b)=>{ return a+b; });
     }
+    static formatAsCurrency(val:number):string{
+        return val == null ? "" : "$"+val.toFixed(2);
+    }
 }
 
 NumberHelper.sumParams(1,2,4,5,6);
