@@ -13,7 +13,9 @@
     "express": "^4.14.0",
     "rimraf": "^2.5.4",
     "server-bridge": "^2.0.4",
-    "server-bridge-express": "^2.0.1"
+    "server-bridge-express": "^2.0.1",
+    "ts-type-info": "^5.0.0",
+    "typescript": "^1.8.10"
   },
   "devDependencies": {
     "typescript": "^1.8.10"
