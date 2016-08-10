@@ -3,7 +3,7 @@ class MyWaitClass {
         console.log("Getting value...");
         this.getValueCallback((returnedVal) => {
             console.log(returnedVal);
-        })
+        });
     }
 
     testPromise() {
@@ -19,10 +19,10 @@ class MyWaitClass {
         console.log(returnedValue);
     }
 
-    getValueCallback(callback:(returnedVal:number)=> void) {
-        setTimeout(()=>{
+    getValueCallback(callback: (returnedVal: number) => void) {
+        setTimeout(() => {
             callback(5);
-        },1000);
+        }, 1000);
     }
 
     async getValue() {

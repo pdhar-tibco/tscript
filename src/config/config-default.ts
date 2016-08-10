@@ -1,5 +1,5 @@
-import {ConfigStructure} from "./structure/config-structure";
 import * as path from "path";
+import {ConfigStructure} from "./structure/config-structure";
 
 const currentDir = path.resolve(__dirname);
 
@@ -14,7 +14,7 @@ const CONFIG:ConfigStructure = {
         ORDERS_FILE: "orders"
     },
     LOG: {
-        FILE: path.join(currentDir,"../log/log.txt");
+        FILE: path.join(currentDir,"../log/log.txt")
     }
 };
 

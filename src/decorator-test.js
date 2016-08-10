@@ -14,8 +14,27 @@ class DecoratorTest {
     }
 }
 __decorate([
-    log_1.Log
+    log_1.Log()
 ], DecoratorTest.prototype, "doSomething", null);
 exports.DecoratorTest = DecoratorTest;
 new DecoratorTest().doSomething("Hello");
+function f() {
+    console.log("f(): evaluated");
+    return function (target, propertyKey, descriptor) {
+        console.log("f(): called");
+    };
+}
+function g() {
+    console.log("g(): evaluated");
+    return function (target, propertyKey, descriptor) {
+        console.log("g(): called");
+    };
+}
+class C {
+    method() { }
+}
+__decorate([
+    f(),
+    g()
+], C.prototype, "method", null);
 //# sourceMappingURL=decorator-test.js.map

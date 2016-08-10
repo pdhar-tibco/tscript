@@ -1,7 +1,8 @@
-import config from "./config";
-import {ConfigStructure} from "./structure/config-structure";
+import config from "./config-default";
 import * as path from "path";
+import {ConfigStructure} from "./structure/config-structure";
 
+console.log(config);
 
 const currentDir = path.resolve(__dirname);
 

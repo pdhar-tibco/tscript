@@ -1,3 +1,4 @@
+import CONFIG from "../config/config"
 import {BaseLogger,ConsoleLogger,FileLogger} from "../loggers/loggers";
 
 export class MainFactory {
@@ -10,7 +11,7 @@ export class MainFactory {
     }
 
     public static getFileLogger():FileLogger {
-        return MainFactory.fileLogger || (MainFactory.fileLogger = new FileLogger());
+        return MainFactory.fileLogger || (MainFactory.fileLogger = new FileLogger(CONFIG.LOG.FILE));
     }
 
     public static getConsoleLogger():ConsoleLogger {

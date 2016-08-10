@@ -197,7 +197,8 @@ promise.then((res) => {
 promise.catch((err) => {
 });
 const promise1 = new Promise((resolve, reject) => {
-    reject(new Error("Something bad happened"));
+    // reject(new Error("Something bad happened"));
+    resolve("OK");
 });
 promise1.then((res) => {
 });

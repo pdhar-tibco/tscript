@@ -2,7 +2,8 @@ import {BaseLogger} from "../loggers/base-logger";
 import {MainFactory} from "../factory/main-factory";
 
 export function BaseLog(logger: BaseLogger) {
-    return (target: Object, methodName: string, descriptor: TypedPropertyDescriptor<any>) => {
+
+    return (target:any, methodName: string, descriptor: TypedPropertyDescriptor<any>) => {
         const originalMethod = descriptor.value;
 
         descriptor.value = function(...args: any[]) {

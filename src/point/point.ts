@@ -223,7 +223,8 @@ promise.catch((err: Error) => {
 });
 
 const promise1 = new Promise<any>((resolve, reject) => {
-    reject(new Error("Something bad happened"));
+    // reject(new Error("Something bad happened"));
+    resolve("OK")
 });
 promise1.then((res) => {
 

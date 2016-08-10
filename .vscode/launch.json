@@ -4,7 +4,7 @@
         "name": "Launch main",
         "type": "node",
         "request": "launch",
-        "program": "${workspaceRoot}/src/main.js",
+        "program": "${workspaceRoot}/src/decorator-test.js",
         "stopOnEntry": false,
         "args": [],
         "cwd": "${workspaceRoot}",
