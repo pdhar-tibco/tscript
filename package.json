@@ -1,5 +1,5 @@
 {
-  "name": "typescript",
+  "name": "tscript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,5 +14,8 @@
     "rimraf": "^2.5.4",
     "server-bridge": "^2.0.4",
     "server-bridge-express": "^2.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10"
   }
 }
