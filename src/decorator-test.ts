@@ -1,10 +1,12 @@
 import {Log} from "./decorator/log";
+import {FileLog} from "./decorator/file-log";
 
 export class DecoratorTest {
 
     constructor() { }
 
     @Log()
+    @FileLog()
     doSomething(str: string): void {
         console.log(`TEST` + str);
     }

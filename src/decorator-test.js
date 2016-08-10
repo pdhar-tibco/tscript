@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const log_1 = require("./decorator/log");
+const file_log_1 = require("./decorator/file-log");
 class DecoratorTest {
     constructor() {
     }
@@ -14,7 +15,8 @@ class DecoratorTest {
     }
 }
 __decorate([
-    log_1.Log()
+    log_1.Log(),
+    file_log_1.FileLog()
 ], DecoratorTest.prototype, "doSomething", null);
 exports.DecoratorTest = DecoratorTest;
 new DecoratorTest().doSomething("Hello");

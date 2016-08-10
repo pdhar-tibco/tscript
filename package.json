@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "core-js": "^2.4.1",
-    "rimraf": "^2.5.4"
+    "express": "^4.14.0",
+    "rimraf": "^2.5.4",
+    "server-bridge": "^2.0.4",
+    "server-bridge-express": "^2.0.1"
   }
 }
