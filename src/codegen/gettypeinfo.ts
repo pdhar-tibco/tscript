@@ -1,4 +1,6 @@
 import * as TsTypeInfo from "ts-type-info";
+import * as fs from "fs";
+import * as path from "path";
 const result = TsTypeInfo.getInfoFromFiles([__dirname + "/testclass.ts"]);
 const property = result.getFile("testclass.ts")
     .getClass("TestClass")
@@ -69,3 +71,7 @@ myClass.addProperty({
 
 // write it out
 console.log(file.write());
+fs.writeFileSync(
+    path.join(__dirname, "TestGenClass.ts"), 
+    file.write(), 
+    { encoding: 'utf8', mode: "0700" })

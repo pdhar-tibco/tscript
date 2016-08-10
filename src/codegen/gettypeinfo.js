@@ -1,5 +1,7 @@
 "use strict";
 const TsTypeInfo = require("ts-type-info");
+const fs = require("fs");
+const path = require("path");
 const result = TsTypeInfo.getInfoFromFiles([__dirname + "/testclass.ts"]);
 const property = result.getFile("testclass.ts")
     .getClass("TestClass")
@@ -63,4 +65,5 @@ myClass.addProperty({
 });
 // write it out
 console.log(file.write());
+fs.writeFileSync(path.join(__dirname, "TestGenClass.ts"), file.write(), { encoding: 'utf8', mode: "0700" });
 //# sourceMappingURL=gettypeinfo.js.map
