@@ -1,114 +1,163 @@
 {
     "version": "0.2.0",
-    "configurations": [{
-        "name": "Launch main",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/src/decorator-test.js",
-        "stopOnEntry": false,
-        "args": [],
-        "cwd": "${workspaceRoot}",
-        "preLaunchTask": null,
-        "runtimeExecutable": null,
-        "runtimeArgs": [
-            "--nolazy"
-        ],
-        "env": {
-            "NODE_ENV": "development"
+    "configurations": [
+        {
+            "name": "Launch client",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/client/client-test.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": null
         },
-        "externalConsole": false,
-        "sourceMaps": true,
-        "outDir": null
-    }, {
-        "name": "Launch Iterator",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/src/iterator/iterator.js",
-        "stopOnEntry": false,
-        "args": [],
-        "cwd": "${workspaceRoot}",
-        "preLaunchTask": null,
-        "runtimeExecutable": null,
-        "runtimeArgs": [
-            "--nolazy"
-        ],
-        "env": {
-            "NODE_ENV": "development"
+        {
+            "name": "Launch server",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/server/index.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": null
         },
-        "externalConsole": false,
-        "sourceMaps": true,
-        "outDir": null
-    }, {
-        "name": "Launch Point",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/src/point/point.js",
-        "stopOnEntry": false,
-        "args": [],
-        "cwd": "${workspaceRoot}",
-        "preLaunchTask": null,
-        "runtimeExecutable": null,
-        "runtimeArgs": [
-            "--nolazy"
-        ],
-        "env": {
-            "NODE_ENV": "development"
+        {
+            "name": "Launch main",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/decorator-test.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": null
         },
-        "externalConsole": false,
-        "sourceMaps": true,
-        "outDir": null
-    }, {
-        "name": "Launch",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/app.js",
-        "stopOnEntry": false,
-        "args": [],
-        "cwd": "${workspaceRoot}",
-        "preLaunchTask": null,
-        "runtimeExecutable": null,
-        "runtimeArgs": [
-            "--nolazy"
-        ],
-        "env": {
-            "NODE_ENV": "development"
+        {
+            "name": "Launch Iterator",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/iterator/iterator.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": null
         },
-        "externalConsole": false,
-        "sourceMaps": false,
-        "outDir": null
-    }, {
-        "name": "Attach",
-        "type": "node",
-        "request": "attach",
-        "port": 5858,
-        "address": "localhost",
-        "restart": false,
-        "sourceMaps": false,
-        "outDir": null,
-        "localRoot": "${workspaceRoot}",
-        "remoteRoot": null
-    }, {
-        "name": "Attach to Process",
-        "type": "node",
-        "request": "attach",
-        "processId": "${command.PickProcess}",
-        "port": 5858,
-        "sourceMaps": false,
-        "outDir": null
-    }, {
-        "name": "Launch Chrome against localhost, with sourcemaps",
-        "type": "chrome",
-        "request": "launch",
-        "url": "file://${workspaceRoot}/src/chap4-1.html",
-        "sourceMaps": true,
-        "webRoot": "${workspaceRoot}"
-    }, {
-        "name": "Attach to Chrome, with sourcemaps",
-        "type": "chrome",
-        "request": "attach",
-        "url": "file://${workspaceRoot}/src/chap4-1.html",
-        "port": 9222,
-        "sourceMaps": true,
-        "webRoot": "${workspaceRoot}"
-    }]
+        {
+            "name": "Launch Point",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/point/point.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": true,
+            "outDir": null
+        },
+        {
+            "name": "Launch",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/app.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "externalConsole": false,
+            "sourceMaps": false,
+            "outDir": null
+        },
+        {
+            "name": "Attach",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": null
+        },
+        {
+            "name": "Attach to Process",
+            "type": "node",
+            "request": "attach",
+            "processId": "${command.PickProcess}",
+            "port": 5858,
+            "sourceMaps": false,
+            "outDir": null
+        },
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "file://${workspaceRoot}/src/chap4-1.html",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "url": "file://${workspaceRoot}/src/chap4-1.html",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
 }
