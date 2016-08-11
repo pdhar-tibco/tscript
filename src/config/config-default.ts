@@ -3,18 +3,18 @@ import {ConfigStructure} from "./structure/config-structure";
 
 const currentDir = path.resolve(__dirname);
 
-const CONFIG:ConfigStructure = {
-    SERVER:{
-        DIR:currentDir,
+const CONFIG: ConfigStructure = {
+    SERVER: {
+        DIR: currentDir,
         PORT: process.env.PORT || 8082
     },
-    STORAGE:{
+    STORAGE: {
         DIR: path.join(currentDir, "../storage/data"),
         FOOD_ITEMS_FILE: "food-items",
         ORDERS_FILE: "orders"
     },
     LOG: {
-        FILE: path.join(currentDir,"../log/log.txt")
+        FILE: path.join(currentDir, "../log/log.txt")
     }
 };
 

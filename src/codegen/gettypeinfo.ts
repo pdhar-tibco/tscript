@@ -26,12 +26,12 @@ const unionproperty = result.getFile("testclass.ts")
 
 console.log(unionproperty.name);
 console.log(unionproperty.type.text);
-console.log(`###################################################`)
+console.log(`###################################################`);
 const file = TsTypeInfo.createFile({
     imports: [{
         moduleSpecifier: "testclass",
-        //starImportName: "fs",
-        //defaultImportName?: string;
+        // starImportName: "fs",
+        // defaultImportName?: string;
         namedImports: [{ name: "TestInterface" }]
     }],
     classes: [{

@@ -3,10 +3,10 @@ import {MainFactory} from "../factory/main-factory";
 
 export function BaseLog(logger: BaseLogger) {
 
-    return (target:any, methodName: string, descriptor: TypedPropertyDescriptor<any>) => {
+    return (target: any, methodName: string, descriptor: TypedPropertyDescriptor<any>) => {
         const originalMethod = descriptor.value;
 
-        descriptor.value = function(...args: any[]) {
+        descriptor.value = function (...args: any[]) {
             const returnValue = originalMethod.apply(this, args);
 
             logger.log(`Called '${methodName}'\n` +
