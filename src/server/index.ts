@@ -1,4 +1,4 @@
-//index.ts
+// index.ts
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {initializeRoutes} from "server-bridge-express";

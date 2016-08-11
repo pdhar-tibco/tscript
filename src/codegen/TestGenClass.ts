@@ -8,7 +8,7 @@ export abstract class TestGenClass implements TestInterface {
     // myMethod is here
     myMethod(myParam: string) {
         if (myParam != null && myParam.length > 40) {
-            alert(myParam)
+            alert(myParam);
         }
 
         return myParam;

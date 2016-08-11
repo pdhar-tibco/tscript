@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 import * as fs from "fs";
 
 class Point {
@@ -32,7 +32,7 @@ class Point3D extends Point {
         this.z = z;
     }
     add(point: Point3D): any {
-        var p2d = super.add(point);
+        let p2d = super.add(point);
         return new Point3D(p2d.x, p2d.y, this.z + point.z);
     }
 }
@@ -44,25 +44,25 @@ class Something {
     }
 }
 
-var s1 = new Something();
-var s2 = new Something();
+let s1 = new Something();
+let s2 = new Something();
 
-console.log(Something.instances)
+console.log(Something.instances);
 //////////////////////////////////////////////////////
 class Foobase {
     public x: number;
     private y: number;
     protected z: number;
 }
-var foo = new Foobase();
-console.log(foo.x)
+let foo = new Foobase();
+console.log(foo.x);
 // foo.y
 // foo.z 
 
 class FooChild extends Foobase {
     constructor() {
         super();
-        this.x; //OK
+        this.x; // OK
         // this.y
         this.z;
     }
@@ -98,38 +98,38 @@ class FooNew {
 // console.log(Foosa.prototype.constructor === Foosa);
 
 class Base {
-    log = () => { console.log('Hello World') };
+    log = () => { console.log("Hello World"); };
 }
 
 class Child extends Base {
     logWorld() { this.log(); };
 }
 
-var child = new Child();
+let child = new Child();
 child.logWorld();
 
 class Person {
     constructor(public age: number) { }
     growOld = () => { this.age++; };
 }
-var person = new Person(20);
+let person = new Person(20);
 setTimeout(person.growOld, 1000);
 setTimeout(function () { console.log(person.age); }, 2000);
 
 class Adder {
     constructor(public a: string) { }
-    add = (b: string): string => { return this.a + b };
+    add = (b: string): string => { return this.a + b; };
 }
 class ExtendedAdder extends Adder {
     private superAdd = this.add;
-    add = (b: string): string => { return this.superAdd(b) }
+    add = (b: string): string => { return this.superAdd(b); }
 }
 
 function iTakeItAll(first: string, second: string, ...allOthers: string[]) {
     console.log(allOthers);
 }
-iTakeItAll('foo', 'bar');
-iTakeItAll('foo', 'bar', 'bas', 'qux');
+iTakeItAll("foo", "bar");
+iTakeItAll("foo", "bar", "bas", "qux");
 {
     let xx = 123;
     if (true) {
@@ -138,15 +138,15 @@ iTakeItAll('foo', 'bar', 'bas', 'qux');
     console.log(xx);
 }
 
-var index = 0
-var array = [1, 2, 3];
+let index = 0;
+let array = [1, 2, 3];
 for (let index = 0; index < array.length; index++) {
     console.log(array[index]);
 }
 console.log(index);
 
-var funcs: any = []
-for (var i = 0; i < 3; i++) {
+let funcs: any = [];
+for (let i = 0; i < 3; i++) {
     (function (x: number) {
         funcs.push(function () {
             console.log(x);
@@ -155,12 +155,12 @@ for (var i = 0; i < 3; i++) {
     })(i);
 
 }
-for (var j = 0; j < 3; j++) {
+for (let j = 0; j < 3; j++) {
     funcs[j]();
 }
 
 {
-    const FOO = '123';
+    const FOO = "123";
     if (true) {
         const FOO = 123;
     }
@@ -171,15 +171,15 @@ for (var j = 0; j < 3; j++) {
 
 
 {
-    var rect = { x: 0, y: 10, width: 15, height: 20 };
+    let rect = { x: 0, y: 10, width: 15, height: 20 };
     let { x, y, width, height} = rect;
     console.log(x, y, width, height);
     const obj = { some_prop: "some_prop" };
     const {"some_prop": someProp} = obj;
     console.log(someProp === "some_prop");
 
-    var foox = { barx: { bas: 123 } };
-    var {barx: {bas}} = foox;
+    let foox = { barx: { bas: 123 } };
+    let {barx: {bas}} = foox;
     console.log(bas);
 }
 
@@ -189,11 +189,12 @@ for (var j = 0; j < 3; j++) {
 
     function loadJSON(filename: string, cb: (error: Error, param?: string) => void) {
         fs.readFile(filename, function (err: Error, data: any) {
+            let parsed: any;
             if (err) {
                 cb(err);
             } else {
                 try {
-                    var parsed = JSON.parse(data);
+                    parsed = JSON.parse(data);
                 } catch (error) {
                     cb(error);
                 }
@@ -203,34 +204,34 @@ for (var j = 0; j < 3; j++) {
         });
     }
 
-    loadJSON('bad.json', function (err: Error, data: string) {
-        if (err) console.log('bad.json error', err.message);
+    loadJSON("bad.json", function (err: Error, data: string) {
+        if (err) console.log("bad.json error", err.message);
         else console.log(data);
-    })
+    });
 }
 
 
-//import { Promise } from 'core-js';
+// import { Promise } from 'core-js';
 
 const promise = new Promise<number>((resolve, reject) => {
     resolve(123);
 });
 promise.then((res) => {
     console.log("I get called:", res === 123);
-})
+});
 promise.catch((err: Error) => {
 
 });
 
 const promise1 = new Promise<any>((resolve, reject) => {
     // reject(new Error("Something bad happened"));
-    resolve("OK")
+    resolve("OK");
 });
 promise1.then((res) => {
 
 });
 promise1.catch((err: Error) => {
-    console.log('I get called:', err.message);
+    console.log("I get called:", err.message);
 });
 
 Promise.resolve(123).then((res: number) => {
@@ -242,7 +243,7 @@ Promise.resolve(123).then((res: number) => {
 }).then((res: number) => {
     console.log(res);
     return Promise.resolve(333);
-})
+});
 
 function returnPromise(): Promise<string> {
     return new Promise<string>((resolve) => {
@@ -254,7 +255,7 @@ Promise.resolve(1234567).then((res: number) => {
     return returnPromise();
 }).then((res) => {
     console.log(res);
-})
+});
 
 function readFileAsync(filename: string): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -275,11 +276,11 @@ function loadJSONAsync(filename: string): Promise<any> {
     });
 }
 
-loadJSONAsync('tsconfig.json').then((val) => {
+loadJSONAsync("tsconfig.json").then((val) => {
     console.log(val);
 }).then((res) => {
     console.log(res);
-    return loadJSONAsync('msconfig.json');
+    return loadJSONAsync("msconfig.json");
 }).then((res) => {
     console.log(res);
 }).catch((err: Error) => {
@@ -298,18 +299,18 @@ function loadItem(id: string): Promise<{ id: string }> {
 }
 
 let item1: { id: string }, item2: { id: string }, item3: { id: string };
-loadItem('1').then((res) => {
+loadItem("1").then((res) => {
     item1 = res;
-    return loadItem('2');
+    return loadItem("2");
 }).then((res) => {
     item2 = res;
-    console.log('done');
-})
+    console.log("done");
+});
 
-Promise.all([loadItem('1'), loadItem('2'), loadItem('3')]).then((res) => {
-    //[item1, item2, item3] = res;
-    console.log('done', res);
-})
+Promise.all([loadItem("1"), loadItem("2"), loadItem("3")]).then((res) => {
+    // [item1, item2, item3] = res;
+    console.log("done", res);
+});
 
 {
     let [x1, y1, ...remaining] = [1, 2, 3, 4];
@@ -343,8 +344,8 @@ function* infiniteSequence() {
 }
 
 let iterator = infiniteSequence();
-let n:IteratorResult<number>;
-while (true) {  
+let n: IteratorResult<number>;
+while (true) {
     n = iterator.next();
     console.log(n);
 }
