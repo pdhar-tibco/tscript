@@ -34,3 +34,4 @@ app.use("/", router);
 const server = app.listen(SERVER_PORT, () => {
     console.log(`Running on port ${server.address().port}`);
 });
+export default app;

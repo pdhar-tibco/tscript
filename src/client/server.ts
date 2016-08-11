@@ -17,7 +17,7 @@ export interface Note {
 
 export class NoteApi extends ClientBase {
     constructor(options?: { urlPrefix: string; }) {
-        super((options == null ? "" : (options.urlPrefix || "")) + "");
+        super((options == null ? "" : (options.urlPrefix || "")) + "/notes");
     }
 
     getAll() {

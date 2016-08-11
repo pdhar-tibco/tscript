@@ -1,6 +1,6 @@
-import {TestInterface} from "testclass";
+import {TestInterface} from "./testclass";
 
-@MyDecorator
+
 export abstract class TestGenClass implements TestInterface {
     myProperty1: string;
     myProperty2 = 4;

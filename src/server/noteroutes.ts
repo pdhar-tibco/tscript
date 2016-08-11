@@ -1,6 +1,7 @@
 import {Use, Get, Post, Routes} from "server-bridge";
 import {Note} from "../common/note";
 
+@Use("/notes")
 export class NoteRoutes extends Routes {
     static memoryNoteStorage: Note[] = [{ text: "AAA", creationDate: new Date() }];
 
