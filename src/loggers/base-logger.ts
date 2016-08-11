@@ -1,10 +1,10 @@
 import * as express from "express";
 
 export abstract class BaseLogger {
-    abstract log(msg:string):void;
+    abstract log(msg: string): void;
 
-    logMessage(msg:string) {
-        this.log(new Date().toLocaleTimeString+":"+ msg);
+    logMessage(msg: string) {
+        this.log(new Date().toLocaleTimeString + ":" + msg);
     }
 
     logRequest(req: express.Request) {
